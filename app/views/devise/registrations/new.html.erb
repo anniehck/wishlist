@@ -1,29 +1,64 @@
-<h2>Sign up</h2>
+<div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'col s10 offset-s1') do |f| %>
+  <div class="row">
+    <h2>Sign up</h2>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="row">
+    <%= devise_error_messages! %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">face</i>
+      <%= f.text_field :first_name %>
+      <%= f.label :first_name %>
+    </div>
+
+    <div class="input-field col s5">
+
+      <%= f.text_field :last_name %>
+      <%= f.label :last_name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">account_circle</i>
+      <%= f.text_field :username %>
+      <%= f.label :username %>
+    </div>
+    <div class="input-field col s6">
+      <i class="material-icons prefix">email</i>
+      <%= f.email_field :email, id: 'email', class: 'validate' %>
+      <label for="email" data-error="Must enter valid email." data-success="Sucess">Email</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">lock_open</i>
+      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+    </div>
+    <div class="input-field col s6">
+      <i class="material-icons prefix">lock</i>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.label :password_confirmation %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "submit" %><br />
+
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+
+</div>

@@ -1,0 +1,45 @@
+form {
+  h2 {
+    text-align: center;
+    font-weight: 200;
+    font-variant: small-caps;
+    font-size: 3rem;
+    margin: 0;
+    padding-top: 25px;
+  }
+  .prefix,
+  i {
+    font-size: 1.6rem !important;
+  }
+  .actions {
+    text-align: right;
+    .submit {
+      background-color: #eee;
+      padding: 10px 20px;
+      border: none;
+      color: orange;
+      margin-bottom: 15px;
+    }
+    a {
+      padding: 10px 20px;
+    }
+  }
+  #error_explanation {
+    color: #e57373;
+    font-weight: 200;
+    h2 {
+      font-size: 1.5rem;
+    }
+    ul {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  form {
+    .input-field {
+      width: 100% !important;
+    }
+  }
+}
